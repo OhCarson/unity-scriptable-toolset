@@ -1,7 +1,7 @@
 {
   "name": "com.sizeable.scriptabletools",
   "displayName": "Scriptable Toolset",
-  "version": "0.0.1",
+  "version": "0.0.11",
   "unity": "2019.3",
   "unityRelease": "15f1",
   "description": "events and variables stored as scriptable objects",
