@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
+using System;
 
 namespace Scriptable.Variables
 {
     [CreateAssetMenu]
-    public class StringVariable : ScriptableObject
+    public class StringVariable : ScriptableVariable
     {
         [SerializeField]
         private string value = "";
@@ -11,7 +12,18 @@ namespace Scriptable.Variables
         public string Value
         {
             get { return value; }
-            set { this.value = value; }
+            set {
+                var prevValue = this.value;
+                this.value = value;
+
+                if (prevValue != value && onChange != null)
+                    onChange.Invoke(value);
+            }
+        }
+
+        public override string ToString()
+        {
+            return value;
         }
     }
 }

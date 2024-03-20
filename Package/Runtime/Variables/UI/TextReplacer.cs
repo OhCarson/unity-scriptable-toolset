@@ -8,20 +8,20 @@ namespace Scriptable.Variables
     {
         public TMP_Text Text;
 
-        public StringVariable Variable;
+        public ScriptableVariable Variable;
 
         public bool AlwaysUpdate;
         
         private void OnEnable()
         {
-            Text.text = Variable.Value;
+            Text.text = Variable.ToString();
         }
 
         private void Update()
         {
             if (AlwaysUpdate)
             {
-                Text.text = Variable.Value;
+                Text.text = Variable.ToString();
             }
         }
     }
