@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.0.11] - 2024-02-28
 ### Added
 - Fixed builds by adding a seporate editor assembly
-## [0.0.12] - 2024-02-28
+## [0.0.12] - 2024-03-20
 ### Added
 - A Timer, Variable change response and advanced text replacing scripts added
+## [0.0.13] - 2024-03-28
+### Added
+- Comparision event raisers added for general, string, and float variables
