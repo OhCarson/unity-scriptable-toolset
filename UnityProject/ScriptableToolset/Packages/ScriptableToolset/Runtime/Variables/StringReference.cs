@@ -37,5 +37,10 @@ namespace Scriptable.Variables
         {
             return reference.Value;
         }
+
+        public override string ToString()
+        {
+            return Value.ToString();
+        }
     }
 }

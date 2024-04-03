@@ -3,22 +3,22 @@
 namespace Scriptable.Variables
 {
     [Serializable]
-    public class StringReference
+    public class BoolReference
     {
         public bool UseConstant = true;
-        public string ConstantValue;
-        public StringVariable Variable;
+        public bool ConstantValue;
+        public BoolVariable Variable;
 
-        public StringReference()
+        public BoolReference()
         { }
 
-        public StringReference(string value)
+        public BoolReference(bool value)
         {
             UseConstant = true;
             ConstantValue = value;
         }
 
-        public string Value
+        public bool Value
         {
             get {
                 if (UseConstant)
@@ -33,7 +33,7 @@ namespace Scriptable.Variables
             }
         }
 
-        public static implicit operator string(StringReference reference)
+        public static implicit operator bool(BoolReference reference)
         {
             return reference.Value;
         }

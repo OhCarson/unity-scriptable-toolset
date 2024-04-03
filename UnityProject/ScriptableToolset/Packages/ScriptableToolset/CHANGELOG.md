@@ -16,3 +16,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.0.13] - 2024-03-28
 ### Added
 - Comparision event raisers added for general, string, and float variables
+## [0.0.14] - 2024-03-28
+### Added
+- BoolVariable
+### Fixed
+- ToString and comparison of reference variables
