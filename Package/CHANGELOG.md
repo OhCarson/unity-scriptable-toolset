@@ -33,3 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.0.16] - 2024-04-05
 ### Added
 - Bool comparison script
+
+## [0.0.17] - 2024-04-05
+### Fixed
+- Issue with bool reference
