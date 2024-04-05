@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Scriptable.Variables
 {
-    [CustomPropertyDrawer(typeof(StringReference))]
+    [CustomPropertyDrawer(typeof(BoolReference))]
     public class BoolReferenceDrawer : PropertyDrawer
     {
         /// <summary>
