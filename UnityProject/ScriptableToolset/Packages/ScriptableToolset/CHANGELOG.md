@@ -29,3 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.0.15] - 2024-04-05
 ### Added
 - Float to timespan text for dealing with countdowns and timers
+
+## [0.0.16] - 2024-04-05
+### Added
+- Bool comparison script
