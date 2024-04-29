@@ -131,11 +131,14 @@ namespace Scriptable.Variables
             SendEvent(EventType.Finish, outputDelta.Value);
         }
 
-        public void SendEvent(EventType eventType,float value)
+        public void SendEvent(EventType eventType, float value)
         {
-            foreach(var e in timerEventsFloat)
+            foreach (var e in timerEventsFloat)
             {
-                switch(e.eventType)
+                if (e.eventType != eventType)
+                    continue;
+
+                switch (e.eventType)
                 {
                     case EventType.UpdateFloat:
                         e.timerEvent.Invoke(value);
@@ -160,6 +163,9 @@ namespace Scriptable.Variables
 
             foreach (var e in timerEventsString)
             {
+                if (e.eventType != eventType)
+                    continue;
+
                 switch (e.eventType)
                 {
                     case EventType.UpdateFloat:
