@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 namespace Scriptable.Events
 {
@@ -12,10 +13,20 @@ namespace Scriptable.Events
         private readonly List<GameEventListener> eventListeners = 
             new List<GameEventListener>();
 
+        /// <summary>
+        /// an action for easily hooking in to events within a script
+        /// needs to be used with respect tho...
+        /// </summary>
+        [NonSerialized]
+        public Action onRaiseAction;
+
         public void Raise()
         {
-            for(int i = eventListeners.Count -1; i >= 0; i--)
+            for (int i = eventListeners.Count -1; i >= 0; i--)
                 eventListeners[i].OnEventRaised();
+
+            if (onRaiseAction != null)
+                onRaiseAction();
         }
 
         public void RegisterListener(GameEventListener listener)
