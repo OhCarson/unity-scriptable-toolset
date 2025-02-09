@@ -24,5 +24,10 @@ namespace Scriptable.Variables
                 Text.text = Variable.ToString();
             }
         }
+
+        public void ChangeVariable(StringVariable value)
+        {
+            Variable = value;
+        }
     }
 }
