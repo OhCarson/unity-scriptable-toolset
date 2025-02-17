@@ -10,6 +10,7 @@ namespace Scriptable.Variables
     public class FloatCompareRaiser : MonoBehaviour
     {
         public bool runOnEnable = true;
+        public bool runOnUpdate = false;
         public enum ComparisonType { Equal, Greater, Less, GreaterEqual, GreaterLess }
         public ComparisonType comparisonType;
         public FloatReference variableA, variableB;
@@ -18,6 +19,12 @@ namespace Scriptable.Variables
         public void OnEnable()
         {
             if(runOnEnable)
+                Process();
+        }
+
+        public void Update()
+        {
+            if (runOnUpdate)
                 Process();
         }
 

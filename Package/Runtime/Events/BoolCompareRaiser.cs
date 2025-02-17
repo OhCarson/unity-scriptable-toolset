@@ -8,12 +8,19 @@ namespace Scriptable.Variables
     public class BoolCompareRaiser : MonoBehaviour
     {
         public bool runOnEnable = true;
+        public bool runOnUpdate = false;
         public BoolReference variableA, variableB;
         public UnityEvent onTrueEvent, onFalseEvent;
 
         public void OnEnable()
         {
             if (runOnEnable)
+                Process();
+        }
+
+        public void Update()
+        {
+            if(runOnUpdate)
                 Process();
         }
 

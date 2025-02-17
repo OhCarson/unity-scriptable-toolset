@@ -10,6 +10,7 @@ namespace Scriptable.Variables
     public class StringCompareRaiser : MonoBehaviour
     {
         public bool runOnEnable = true;
+        public bool runOnUpdate = false;
         //public enum ComparisonType { Equal, Greater, Less, GreaterEqual, GreaterLess }
         public StringReference variableA, variableB;
         public UnityEvent onTrueEvent, onFalseEvent;
@@ -17,6 +18,12 @@ namespace Scriptable.Variables
         public void OnEnable()
         {
             if(runOnEnable)
+                Process();
+        }
+
+        public void Update()
+        {
+            if (runOnUpdate)
                 Process();
         }
 
