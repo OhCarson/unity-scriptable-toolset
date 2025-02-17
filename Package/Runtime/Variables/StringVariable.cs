@@ -25,5 +25,10 @@ namespace Scriptable.Variables
         {
             return value;
         }
+
+        public void CopyFrom(ScriptableVariable variable)
+        {
+            this.Value = variable.ToString();
+        }
     }
 }

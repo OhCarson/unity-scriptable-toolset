@@ -59,5 +59,10 @@ namespace Scriptable.Variables
         {
             return _value.ToString();
         }
+
+        public void CopyFrom(FloatVariable variable)
+        {
+            this.Value = variable.Value;
+        }
     }
 }

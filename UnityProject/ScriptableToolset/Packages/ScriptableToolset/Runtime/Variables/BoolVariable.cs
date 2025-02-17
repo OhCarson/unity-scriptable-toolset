@@ -27,5 +27,10 @@ namespace Scriptable.Variables
         {
             return value.ToString();
         }
+
+        public void CopyFrom(BoolVariable variable)
+        {
+            this.Value = variable.Value;
+        }
     }
 }
