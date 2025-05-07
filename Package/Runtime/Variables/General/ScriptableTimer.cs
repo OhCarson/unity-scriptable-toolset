@@ -7,7 +7,7 @@ namespace Scriptable.Variables
 {
     public class ScriptableTimer : MonoBehaviour
     {
-        public enum EventType { UpdateFloat, UpdateWhole, Start, Pause, Resume, Finish }
+        public enum EventType { UpdateFloat, UpdateWhole, Start, Pause, Resume, Finish, Cancel }
         [System.Serializable]
         public struct TimerEventFloat
         {
@@ -129,6 +129,13 @@ namespace Scriptable.Variables
         {
             _isRunning = false;
             SendEvent(EventType.Finish, outputDelta.Value);
+        }
+
+        public void CancelTimer()
+        {
+            _isRunning = false;
+            _isPaused = false;
+            SendEvent(EventType.Cancel, outputDelta.Value);
         }
 
         public void SendEvent(EventType eventType, float value)
